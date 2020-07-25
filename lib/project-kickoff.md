@@ -19,12 +19,69 @@
 - eg. As a user, I want to be able to save posts, because I want to review them later.
 - User stories can also be negated: As a __, I shouldn't be able to _, because ___.
 - eg. As a user, I shouldn't be able to edit other users posts, because I don't own those posts.
+
+## RESTAURANT DETAILS
+- Name Captain Clucks
+- Menu
+  - Chicken Drums x 2
+  - Chicken Wings x 10
+  - Chicken Sandwich
+  - Popcorn Chicken x 15
+  - Chicken and Waffles 
+  - Coleslaw 
+  - Macaroni salad 
+  - Tater Tots
+  - Root Beer 
+  - Lemonade
+  - Pepsi
+  - Bottled Water
+
+
+
 ## User Scenarios
 - A user scenario is a syntactic alternative to user stories
 - They have the form: Given __, when _, then ____.
 - eg. Given that I am logged in, when I click favourite on a post, then it is added to my favourites.
 - You can also chain on an and to user stories/scenarios
 - eg. Given that I am logged in, when I click favourite on a post, then it is added to my favourites and the save icon will change to indicate success.
+
+## OUR SCENARIOS
+- As a user I want to view the menu.
+- As a user I want to then choose which menu items, and quantity.
+- As a user I want to be able to change my menu items before I order.
+- As a user I can see my order total before I order / after I update my order.
+- As a user I want to put in my contact info, and press order to order my food.
+- As a user I want to receive order confirmation, and time for pickup.
+- As an admin, I want to receive an SMS when an order is placed.
+- As an admin, I want to send an SMS to the app containing the pickup time AND then, the app conveys the confirmation and pickup time to the user VIA SMS.
+- As a user I don't want to accidentally order more than once.
+
+### Stretch Scenarios
+- As a user it would be ideal to have a cancel SMS command feature, if I want to cancel my order
+- As an admin, would be necessary to add or edit the menu
+- As an admin, would be nice to offer specials
+
+## Tables
+- Menu
+  - id | SERIAL PRIMARY KEY
+  - name
+  - price
+  - description
+  - picture
+
+- Menu_Orders
+  - id 
+  - menu_id | FK
+  - order_id | FK
+
+- Orders
+  - id | 
+  - user_name
+  - user_phone
+  - total
+
+
+
 ## ERD
 - The user stories provide you with nouns (eg. user, posts, favourites)
 - Use these nouns/entities to build out your database (ie. tables are the nouns from the stories)
