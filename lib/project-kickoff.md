@@ -93,6 +93,28 @@
 ## Routes
 - Once you know the resources that you'll have, write out the routes that you'll need to perform BREAD operations on those resources
 - Remember RESTful conventions (they make it much easier)
+
+MENU PAGE
+- send get to /menu
+- request info from db menu
+
+PLACE ORDER
+POST to /orders
+- insert new order into orders with name, phone, total, status, pickup time 
+- insert line items into menu_orders table
+- then send POST to twilio to send SMS to restaurant / listen for response from restaurant
+- send POST to twilio to send to customer with initial confirmation message and pickup time
+
+AJAX (
+Confirmation page
+- send get to /order-confirmed
+- request all tables info to display on page
+- change html on page with confirmation
+  IF response from restaurant (DELAY)
+  - Save info from twilio's message
+  - send POST to twilio with message for twilio to send to customer
+)
+
 ## MVP vs MVD
 - There is a concept in development of an MVP, the Minimum Viable Product
 - An MVP has just enough features to be useful to a user
