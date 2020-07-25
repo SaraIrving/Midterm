@@ -61,6 +61,10 @@
 - As a user it would be ideal to have a cancel SMS command feature, if I want to cancel my order
 - As an admin, would be necessary to add or edit the menu
 - As an admin, would be nice to offer specials
+- Change formatting of how drinks are displayed
+- actually add google maps instead of a photo of a map 
+- the confirmation page displays the pickup time after it is sent from the restaurant (in addition to notifying the client via TEXT)
+- have an admin user that can view all post orders 
 
 ## Tables
 - Menu
@@ -101,6 +105,43 @@
 - This is also a great opportunity to get input from all of the team members
 - Design matters... however you are a developer, not a designer
 - Get inspiration from websites you visit
+
+## Landing Page Wireframes
+- logo
+- menu button
+- photo
+- selling props 3 column 
+- text blurb 
+- feature section 
+- lots of chicken photos 
+- map
+- footer
+
+## Menu Wireframe
+- logo
+- button linking to home page 
+- large hero photo 
+- for each item: photo, name, description, price, box with quantity and add to order button
+- to the side have a "Your Order" section which live updates to reflect the order contents and total as they build it, follows down the pages as the user scrolls through the menu  
+  - add special instructions to the order (need to update order table) 
+  - make the order a collapsable toggle for mobile layout 
+  - total will dynamically update 
+  - a garbage can icon next to each item in the order in case they want to delete it 
+  - error messages that drop down if they don't have name or phone number inputted 
+
+## Confirmation Wireframe 
+- logo
+- menu button at top 
+- blurb that order is placed and pickup in 20 min 
+  - display customers name 
+  - display order ID
+- text saying they will get a text confirming pickup time and a second text if there is a delay 
+- breakdown of the order 
+- large photo of map
+- 
+
+
+
 ## User Login
 - Don't do it
 - Seriously, don't do it
