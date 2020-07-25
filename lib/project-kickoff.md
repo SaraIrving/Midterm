@@ -56,6 +56,8 @@
 - As an admin, I want to receive an SMS when an order is placed.
 - As an admin, I want to send an SMS to the app containing the pickup time AND then, the app conveys the confirmation and pickup time to the user VIA SMS.
 - As a user I don't want to accidentally order more than once.
+- As an admin, I can login to my dashboard and view a list of pending and past orders.
+- As an admin, I can specify wait time, which will confirm the order.
 
 ### Stretch Scenarios
 - As a user it would be ideal to have a cancel SMS command feature, if I want to cancel my order
@@ -65,6 +67,7 @@
 - actually add google maps instead of a photo of a map 
 - the confirmation page displays the pickup time after it is sent from the restaurant (in addition to notifying the client via TEXT)
 - have an admin user that can view all post orders 
+- create a filter for results in dashboard 
 
 ## Tables
 - Menu
@@ -100,20 +103,32 @@ MENU PAGE
 
 PLACE ORDER
 POST to /orders
-- insert new order into orders with name, phone, total, status, pickup time 
-- insert line items into menu_orders table
-- then send POST to twilio to send SMS to restaurant / listen for response from restaurant
-- send POST to twilio to send to customer with initial confirmation message and pickup time
+- insert new order into orders with name, phone, total, status, pickup time
+- insert line items into menu_details table
+- then send POST to twilio to send SMS to restaurant
+- set interval to ajax listen to db order status change / as soon as the change is registered, redirect the page to confirmation page
+- triggers pending notification banner
+- form success page
 
-AJAX (
 Confirmation page
-- send get to /order-confirmed
 - request all tables info to display on page
-- change html on page with confirmation
-  IF response from restaurant (DELAY)
-  - Save info from twilio's message
-  - send POST to twilio with message for twilio to send to customer
-)
+  IF response status from restaurant is > 30 mins
+  - display longer than usual notification
+
+ADMIN USER
+- send get to /login to go to login page
+- send post to /login to redirect to dashboard
+- send get to /dashboard requests order and order_details from db to display orders on page, and renders dashboard page
+- send post on /order-update which updates the order status from to value of pickup wait time.
+- send post to twilio to SMS customer
+
+## List it out
+- create views ejs skeletons
+- jquery up the menu form
+- route it up, aside from twilio
+- tackle twilio
+- design
+
 
 ## MVP vs MVD
 - There is a concept in development of an MVP, the Minimum Viable Product
@@ -121,6 +136,7 @@ Confirmation page
 - This concept helps streamline the development process and help keep the team on target
 - For mid-terms, we want to focus on the MVD, the Minimum Viable Demo
 - If you aren't going to demo it, don't build it
+
 ## Wireframes
 - Draw out the structure of your web pages
 - This will make it much easier to build out these pages later
@@ -161,7 +177,9 @@ Confirmation page
 - breakdown of the order 
 - large photo of map
 - 
+ ## Owner login
 
+ ## Owner Dashboad 
 
 
 ## User Login
