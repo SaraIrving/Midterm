@@ -11,10 +11,60 @@
     <script type="text/javascript" src="/scripts/app.js"></script>
   </head>
   <body>
-    <h1>Menu!</h1>
-    <% for (let menu_item of menu) { %>
-    <h2><%= menu_item.item_name %></h2>
-    <h3><%= menu_item.price %></h3>
-    <% } %>
+    <% include partials/_header %>
+    <section class="hero">
+      <article>
+        <h2>GOOD EATS START HERE</h2>
+        <h3>Order up some clucks!</h3>
+      </article>
+    </section>
+    <main>
+      <section class="menu-wrapper">
+        <article >
+          <form action="/orders" method="post" class="menu-form">
+            <div>
+              <% for (let menu_item of menu) { %>
+                <article class="item-wrapper">
+                  <img src="<%= menu_item.image_url %>" alt="<%= menu_item.item_name %>" width="200">
+                  <div class="item-specifics">
+                    <div class="name-description">
+                      <h4><%= menu_item.item_name %>  |  <%= menu_item.price %></h4>
+                      <p><%= menu_item.description %></p>
+                      <span>Add to order:</span>
+                      <input type="number" name="<%= menu_item.item_name %>_qty">
+                    </div>
+                  </div>
+                </article>
+                <% } %>
+            </div>
+            <div>
+              <article class="order-summary">
+                <div>
+                  <h5>ORDER:</h5>
+                </div>
+                <div>
+                  <ul>
+                  </ul>
+                </div>
+                <div>
+                  <p>TOTAL:<span class="order-total"></span></p>
+                </div>
+                <div>
+                  <input type="text" name="customer-name" placeholder="Your Name">
+                  <input type="tel" name="customer-phone" placeholder="Phone">
+                  <textarea name="special-instructions" placeholder="Special Instructions"></textarea>
+                </div>
+                <div>
+                  <button class="submit-order" type="submit">PLACE ORDER</button>
+                </div>
+
+              </article>
+            </div>
+          </form>
+        </article>
+      </section>
+    </main>
   </body>
+
+  <% include partials/_footer %>
 </html>
