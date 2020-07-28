@@ -162,6 +162,16 @@ body {
   }
   article.order-summary {
     padding:4em;
+    .order-list {
+      padding-left:0px;
+    }
+    p, span {
+      display:inline-block;
+    }
+    li {
+      list-style-type:none;
+      color:$accent-color;
+    }
   }
   footer {
     background-color: $dark-color;
@@ -175,6 +185,9 @@ body {
       font-size:1.4em;
       text-align:center;
     }
+  }
+  .hide {
+    display: none;
   }
 
 }

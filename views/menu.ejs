@@ -30,10 +30,10 @@
                   <img src="<%= menu_item.image_url %>" alt="<%= menu_item.item_name %>" width="200">
                   <div class="item-specifics">
                     <div class="name-description">
-                      <h4 class="item-name"><%= menu_item.item_name %></4><h4>   |  <%= menu_item.price %></h4>
+                      <h4 class="item-name"><%= menu_item.item_name %></4><h4>  |  </h4><h4 class="item-price"><%= (menu_item.price / 100) %></h4>
                       <p><%= menu_item.description %></p>
                       <span>Add to order:</span>
-                      <input class="item-qty" type="number" name="<%= menu_item.item_name %>">
+                      <input class="item-qty" type="number" min="0" name="<%= menu_item.item_name %>">
                     </div>
                   </div>
                 </article>
