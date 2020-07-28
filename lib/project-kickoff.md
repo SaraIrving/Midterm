@@ -104,7 +104,7 @@ MENU PAGE
 PLACE ORDER
 POST to /orders
 - insert new order into orders with name, phone, total, status, pickup time
-- insert line items into menu_details table
+- insert line items into order_details table
 - then send POST to twilio to send SMS to restaurant
 - set interval to ajax listen to db order status change / as soon as the change is registered, redirect the page to confirmation page
 - triggers pending notification banner
