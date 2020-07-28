@@ -2,7 +2,7 @@
 
 DROP TABLE IF EXISTS menu_orders CASCADE;
 DROP TABLE IF EXISTS order_details CASCADE;
-CREATE TABLE menu_orders (
+CREATE TABLE order_details (
   menu_id INTEGER REFERENCES menu(id) ON DELETE CASCADE,
   order_id INTEGER REFERENCES orders(id) ON DELETE CASCADE,
   qty INTEGER
