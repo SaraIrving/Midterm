@@ -64,8 +64,90 @@ $(document).ready(function () {
 
   })
 
+  $('.submit-order').on('mousedown',function(event){
+    $('input.order-total').val($('.order-total-span').text());
+  });
 
 
 })
+
+
+
+
+
+
+
+
+// Result {
+//   command: 'INSERT',
+//   rowCount: 1,
+//   oid: 0,
+//   rows:
+//    [ anonymous {
+//        id: 5,
+//        user_name: 'foobar',
+//        user_phone: '111',
+//        total: 7,
+//        status: 'pending',
+//        created_at: 2020-07-28T18:36:30.804Z } ],
+//   fields:
+//    [ Field {
+//        name: 'id',
+//        tableID: 49221,
+//        columnID: 1,
+//        dataTypeID: 23,
+//        dataTypeSize: 4,
+//        dataTypeModifier: -1,
+//        format: 'text' },
+//      Field {
+//        name: 'user_name',
+//        tableID: 49221,
+//        columnID: 2,
+//        dataTypeID: 1043,
+//        dataTypeSize: -1,
+//        dataTypeModifier: 259,
+//        format: 'text' },
+//      Field {
+//        name: 'user_phone',
+//        tableID: 49221,
+//        columnID: 3,
+//        dataTypeID: 1043,
+//        dataTypeSize: -1,
+//        dataTypeModifier: 259,
+//        format: 'text' },
+//      Field {
+//        name: 'total',
+//        tableID: 49221,
+//        columnID: 4,
+//        dataTypeID: 23,
+//        dataTypeSize: 4,
+//        dataTypeModifier: -1,
+//        format: 'text' },
+//      Field {
+//        name: 'status',
+//        tableID: 49221,
+//        columnID: 5,
+//        dataTypeID: 1043,
+//        dataTypeSize: -1,
+//        dataTypeModifier: 36,
+//        format: 'text' },
+//      Field {
+//        name: 'created_at',
+//        tableID: 49221,
+//        columnID: 6,
+//        dataTypeID: 1114,
+//        dataTypeSize: 8,
+//        dataTypeModifier: -1,
+//        format: 'text' } ],
+//   _parsers:
+//    [ [Function: parseInteger],
+//      [Function: noParse],
+//      [Function: noParse],
+//      [Function: parseInteger],
+//      [Function: noParse],
+//      [Function: parseDate] ],
+//   RowCtor: [Function: anonymous],
+//   rowAsArray: false,
+//   _getTypeParser: [Function: bound ] }
 
 
