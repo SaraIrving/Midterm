@@ -3,7 +3,7 @@
 
 ## W5D5 Mid-term Project Kickoff
 ## Pick a Project
-<!-- - Wiki Map
+<!-- <!-- - Wiki Map -->
 - Quiz App
 - Story Creator\
 - Decision Maker
@@ -18,10 +18,6 @@
 
 - They have the form: As a ___, I want to _, because ____.
 - eg. As a user, I want to be able to save posts, because I want to review them later.
-<<<<<<< HEAD
-- User stories can also be negated: As a __, I shouldn't be able to _, because ___.
-- eg. As a user, I shouldn't be able to edit other users posts, because I don't own those posts. -->
-=======
 - User stories can also be negated: \s a __, I shouldn't be able to _, because ___.
 - eg. As a user, I shouldn't be able to edit other users posts, because I don't own those posts.
 
@@ -43,7 +39,6 @@
 
 
 
->>>>>>> a1aedffb17e68dd9b826fd723d2d0149ccc5a8c7
 ## User Scenarios
 - A user scenario is a syntactic alternative to user stories
 - They have the form: Given __, when _, then ____.
