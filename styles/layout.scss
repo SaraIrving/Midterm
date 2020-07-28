@@ -161,16 +161,31 @@ body {
     float:right;
   }
   article.order-summary {
-    padding:4em;
+    padding:3em 0 2em 4em;
     .order-list {
       padding-left:0px;
     }
+    div:nth-child(3) {
+      border-top:solid 3px $dark-color;
+      border-radius:0px;
+    }
+    div:nth-child(4) textarea, div:nth-child(4) input {
+      width:100%;
+    }
+    h6 {
+      display:none;
+    }
+    a {
+      margin:3px 0 0 6px;
+    }
     p, span {
       display:inline-block;
+      letter-spacing: .5px;
     }
     li {
       list-style-type:none;
       color:$accent-color;
+      font-size:14px;
     }
   }
   footer {
