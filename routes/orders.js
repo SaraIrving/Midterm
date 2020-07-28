@@ -4,8 +4,10 @@
 const express = require('express');
 const router  = express.Router();
 
-const accountSid = 'AC79646364b67cb9a7b7c643b179eb3d8a';
-const authToken = '80d45bbc1fbfdc850df1299613a4f3b5';
+const accountSid = process.env.DB_ACCOUNTSID;
+const authToken = process.env.DB_AUTHTOKEN;
+
+
 
 const client = require('twilio')(accountSid, authToken);
 
@@ -56,7 +58,7 @@ module.exports = (db) => {
         orderBreakdown += ` Please confirm pickup time in minutes`;
 
         client.messages.create({
-          to: '+14035606575',
+          to: '+17789298779',
           from: '+15879068570',
           body: orderBreakdown
         });
