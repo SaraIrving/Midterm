@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Dashboard Page</title>
+
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script defer type="text/javascript" src="/scripts/dashboard.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <% include partials/_header %>
+    <main>
+      <section class="orders-wrapper">
+        <article >
+          <form action="/order-update" method="post">
+          <% for (let order of orders) { %>
+            <article class="dash-order-item">
+              <div class="dash-order-summary">
+                <h4 class="dash-order-id">Order ID: <%= order.order_id%></h4>
+                <h5 class="dash-order-total">Order Total: <%= order.total%></h5>
+                <ul class="dash-order-list">
+
+                  <li><%= order.item_name%> x <%= order.qty%></li>
+
+                </ul>
+              </div>
+              <div>
+                <h5>Ordered At: <%= order.created_at%></h5>
+                <p>Client Name: <%= order.user_name%></p>
+                <p>Client Phone: <%= order.user_phone%></p>
+              </div>
+              <div>
+                <h4>STATUS: <%= order.status%></h4>
+                <span>CONFIRM WAIT TIME: </span>
+                <input type="number">
+                <button type="submit">Confirm Order</button>
+              </div>
+            </article>
+          <% } %>
+          </form>
+        </article>
+      </section>
+    </main>
+  </body>
+
+  <% include partials/_footer %>
+</html>

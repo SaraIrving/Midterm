@@ -41,7 +41,7 @@ module.exports = (db) => {
         tempData = data.rows[0];
           db.query(`INSERT INTO order_details (menu_id, order_id, qty) VALUES ((SELECT id FROM menu WHERE item_name = '${menuItem[0]}'), ${data.rows[0].id}, ${menuItem[1]})`);
       }
-      res.redirect('/menu');
+
     })
     .then((data) => {
       db.query(`SELECT * FROM orders JOIN order_details ON orders.id = order_id JOIN menu ON menu_id = menu.id WHERE order_id = ${tempData.id}`)
@@ -62,6 +62,8 @@ module.exports = (db) => {
           from: '+15879068570',
           body: orderBreakdown
         });
+
+        res.redirect('/menu');
 
       })
     })
