@@ -18,3 +18,7 @@
 //       console.log('problem');
 //   });
 // });
+
+
+ // function fetchdata(){  $.ajax({   url: 'fetch_details.php',   type: 'post',   success: function(response){    // Perform operation on the return value    alert(response);   }  }); }  $(document).ready(function(){  setInterval(fetchdata,5000); });
+

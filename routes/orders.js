@@ -62,8 +62,18 @@ module.exports = (db) => {
           body: orderBreakdown
         });
 
-        res.redirect('/menu');
-
+        const interval = setInterval(() => {
+          console.log('interval has been called')
+          db.query(`SELECT id FROM orders WHERE id = ${tempData.id}`)
+          .then((data) => {
+            if (data.rows[0].status !== '0') {
+                let status = tempData;
+                clearInterval(interval);
+                res.render('order-confirmation',{ status });
+            }
+          })
+        }, 10000);
+        // function fetchdata(){  $.ajax({   url: 'fetch_details.php',   type: 'post',   success: function(response){    // Perform operation on the return value    alert(response);   }  }); }  $(document).ready(function(){  setInterval(fetchdata,5000); });
       })
     })
     .catch((err) => {

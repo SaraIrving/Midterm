@@ -37,6 +37,7 @@
                 <div class="order-form-inputs">
                   <span>CONFIRM WAIT TIME: </span>
                   <input type="hidden" name="order_id" value="<%= orderPosts[order].order_id%>" />
+                  <input type="hidden" name="customer_phone" value="<%= orderPosts[order].user_phone %>" />
                   <input type="number" name="status" />
                   <button type="submit">Confirm Order</button>
                 </div>

@@ -66,7 +66,11 @@ $(document).ready(function () {
 
   $('.submit-order').on('mousedown',function(event){
     $('input.order-total').val($('.order-total-span').text());
+    $('body').prepend('<div id="order-pending-banner">YOUR ORDER IS BEING CONFIRMED BY THE CAPTAIN...</div>');
+
+
   });
+
 
 
 })

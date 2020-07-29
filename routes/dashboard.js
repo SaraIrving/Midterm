@@ -23,6 +23,7 @@ module.exports = (db) => {
             orderPosts[orderLineItem.order_id].allItems.push([orderLineItem['item_name'],orderLineItem['qty']]);
           }
         }
+        console.log(orderPosts);
 
         // res.json({ orders });
         res.render('dashboard', { orders, orderPosts })

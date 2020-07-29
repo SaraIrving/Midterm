@@ -252,3 +252,15 @@ section.orders-wrapper > article {
   display:flex;
   flex-direction: column-reverse;
 }
+
+
+#order-pending-banner {
+  position:fixed;
+  padding: .5em;
+  background:#2CA70A;
+  color: $dark-color;
+  text-align:center;
+  width:100%;
+  z-index:4;
+  border-radius:0 0 4px 4px;
+}
