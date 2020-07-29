@@ -9,8 +9,9 @@ const bodyParser = require("body-parser");
 const sass       = require("node-sass-middleware");
 const app        = express();
 const morgan     = require('morgan');
-const http       = require('http');
-const MessagingResponse = require('twilio').twiml.MessagingResponse;
+//need for twilio response
+// const http       = require('http');
+// const MessagingResponse = require('twilio').twiml.MessagingResponse;
 
 // PG database client/connection setup
 const { Pool } = require('pg');
@@ -57,18 +58,27 @@ app.get("/", (req, res) => {
   res.redirect("/menu");
 });
 
+app.get("/login", (req, res) => {
+  res.render("login");
+});
+
+app.post("/login", (req,res) => {
+  res.redirect('/dashboard')
+});
+
 // app.get("/menu", (req, res) => {
 //   res.render("index");
 // });
 
-app.post('/sms', (req, res) => {
-  const twiml = new MessagingResponse();
-  console.log('req.body of the response from restaurant = ', req.body);
+// running ($twilio login) seems to be throwing a versioning error due to node? going to table for now..
+// app.post('/sms', (req, res) => {
+//   const twiml = new MessagingResponse();
+//   console.log('req.body of the response from restaurant = ', req.body);
 
-  twiml.message('Pickup time has been sent to the customer!');
-  res.writeHead(200, {'Content-Type': 'text/xml'});
-  res.end(twiml.toString());
-})
+//   twiml.message('Pickup time has been sent to the customer!');
+//   res.writeHead(200, {'Content-Type': 'text/xml'});
+//   res.end(twiml.toString());
+// })
 
 
 app.listen(PORT, () => {
