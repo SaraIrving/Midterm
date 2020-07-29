@@ -17,24 +17,24 @@
       <section class="orders-wrapper">
         <article >
           <form action="/order-update" method="post">
-          <% for (let order of orders) { %>
+          <% for (let order in orderPosts) { %>
             <article class="dash-order-item">
               <div class="dash-order-summary">
-                <h4 class="dash-order-id">Order ID: <%= order.order_id%></h4>
-                <h5 class="dash-order-total">Order Total: <%= order.total%></h5>
+                <h4 class="dash-order-id">Order ID: <%= orderPosts[order].order_id%></h4>
+                <h5 class="dash-order-total">Order Total: <%= orderPosts[order].total%></h5>
                 <ul class="dash-order-list">
-
-                  <li><%= order.item_name%> x <%= order.qty%></li>
-
+                  <% for (let item of orderPosts[order].allItems) { %>
+                  <li><%= item[0]%> x <%= item[1]%></li>
+                  <% } %>
                 </ul>
               </div>
               <div>
-                <h5>Ordered At: <%= order.created_at%></h5>
-                <p>Client Name: <%= order.user_name%></p>
-                <p>Client Phone: <%= order.user_phone%></p>
+                <h5>Ordered At: <%= orderPosts[order].created_at%></h5>
+                <p>Client Name: <%= orderPosts[order].user_name%></p>
+                <p>Client Phone: <%= orderPosts[order].user_phone%></p>
               </div>
               <div>
-                <h4>STATUS: <%= order.status%></h4>
+                <h4>STATUS: <%= orderPosts[order].status%></h4>
                 <span>CONFIRM WAIT TIME: </span>
                 <input type="number">
                 <button type="submit">Confirm Order</button>
