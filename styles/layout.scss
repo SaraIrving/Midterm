@@ -205,6 +205,28 @@ body {
     display: none;
   }
 
+
+
+
+
+  // login page
+
+  section.login-section {
+    // padding: 6em;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    min-height:50vh;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      h2 {
+      text-align: center;
+      }
+    }
+  }
 }
 
 
