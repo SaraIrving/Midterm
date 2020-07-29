@@ -247,3 +247,8 @@ article.dash-order-item {
   }
 
 }
+
+section.orders-wrapper > article {
+  display:flex;
+  flex-direction: column-reverse;
+}

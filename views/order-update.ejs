@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Order Confirmation</title>
+
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script defer type="text/javascript" src="/scripts/order-update.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <% include partials/_header %>
+    <main>
+      <section class="orders-wrapper">
+        <article >
+          <form action="/order-update" method="post">
+
+            <article class="dash-order-item">
+              <div class="dash-order-summary">
+                <h4 class="dash-order-id">Order ID: <%= status[0].order_id %></h4>
+                <h5 class="dash-order-total">Order Total: <%= (status[0].total /100).toFixed(2) %></h5>
+                <ul class="dash-order-list">
+                  <% for (let item of status) { %>
+                  <li><%= item.item_name %> x <%= item.qty %></li>
+                  <% } %>
+                </ul>
+              </div>
+              <div>
+                <h5>Ordered At: <%= status[0].created_at %></h5>
+                <p>Client Name: <%= status[0].user_name %></p>
+                <p>Client Phone: <%= status[0].user_phone %></p>
+              </div>
+              <div>
+                <h4>STATUS: <%= status[0].status %></h4>
+                <span>CONFIRM WAIT TIME: </span>
+                <input type="hidden" name="order_id" value="<%= status[0].order_id%>" />
+                <input type="number" name="status" />
+                <button type="submit">Confirm Order</button>
+              </div>
+            </article>
+          </form>
+        </article>
+      </section>
+    </main>
+  </body>
+
+  <% include partials/_footer %>
+</html>

@@ -19,7 +19,7 @@ module.exports = (db) => {
     let specialInstructions = req.body['special-instructions'];
     let orderPhone = req.body['customer-phone'];
     let orderName = req.body['customer-name'];
-    let orderTotal = req.body['order-total'];
+    let orderTotal = req.body['order-total'] * 100;
 
     for (let [key,value] of Object.entries(req.body)) {
       if (value) {
@@ -35,7 +35,7 @@ module.exports = (db) => {
 
     let tempData;
 
-    db.query(`INSERT INTO orders (user_name, user_phone, total, status) VALUES ('${orderName}', ${orderPhone}, ${orderTotal}, 'pending') RETURNING *`)
+    db.query(`INSERT INTO orders (user_name, user_phone, total, status) VALUES ('${orderName}', ${orderPhone}, ${orderTotal}, 0) RETURNING *`)
     .then((data) => {
       for (let menuItem of orderItems) {
         tempData = data.rows[0];
@@ -46,7 +46,6 @@ module.exports = (db) => {
     .then((data) => {
       db.query(`SELECT * FROM orders JOIN order_details ON orders.id = order_id JOIN menu ON menu_id = menu.id WHERE order_id = ${tempData.id}`)
       .then((data) => {
-        console.log('data2.rows = ', data.rows);
         let orderBreakdown = `New order from ${data.rows[0].user_name}, who ordered `;
         for (let orderItem of data.rows) {
           orderBreakdown += `${orderItem.item_name} x ${orderItem.qty} `;

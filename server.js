@@ -40,6 +40,7 @@ const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
 const menuRoutes = require("./routes/menu");
 const orderRoutes = require("./routes/orders");
+const orderUpdateRoutes = require("./routes/order-update");
 const dashboardRoutes = require("./routes/dashboard");
 
 
@@ -48,6 +49,7 @@ const dashboardRoutes = require("./routes/dashboard");
 app.use("/menu", menuRoutes(db));
 app.use("/dashboard", dashboardRoutes(db));
 app.use("/orders", orderRoutes(db));
+app.use("/order-update", orderUpdateRoutes(db));
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 // Note: mount other resources here, using the same pattern above
