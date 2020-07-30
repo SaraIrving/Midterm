@@ -73,6 +73,10 @@ $(document).ready(function () {
     $('.order-summary').append('<div class="order-done"><h3>Thanks!</h3><p>Your order has been placed.</p></div>');
   });
 
+  $('.order-toggle').on('click',function(event) {
+    // $('section.menu-wrapper form > div:last-of-type').css('display','none');
+    $('section.menu-wrapper form > div:last-of-type').toggle();
+  });
 
 
 })

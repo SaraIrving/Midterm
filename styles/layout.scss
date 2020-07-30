@@ -83,10 +83,10 @@ body {
     padding: 80px 0;
   }
 
-  @media (max-width:1024px) {
+  @media (max-width:1110px) {
     section {
-      padding-left:3em;
-      padding-right:3em;
+      padding-left:6%;
+      padding-right:6%;
     }
   }
 
@@ -175,7 +175,14 @@ body {
       text-align:center;
     }
   }
-
+  @media (max-width:750px) {
+    section.menu-wrapper article.item-wrapper {
+      flex-direction:column;
+    }
+    article.item-wrapper .item-specifics {
+      width:100% !important;
+    }
+  }
 
   article.item-wrapper {
     display: flex;
@@ -183,11 +190,23 @@ body {
     border: 3px solid $dark-color;
     margin-bottom: 2em;
     width:100%;
+
     img {
       width:35%;
       height:300px;
       object-fit:cover;
       object-position:center;
+    }
+    @media (max-width:1110px) {
+      img {
+        height:260px;
+      }
+    }
+    @media (max-width:750px) {
+      img {
+        height:150px;
+        width:100%;
+      }
     }
     div.name-description {
       display: flex;
@@ -217,6 +236,11 @@ body {
       width:65%;
       align-items:center;
     }
+    @media (max-width:1110px) {
+      div.item-specifics {
+        padding:1.4em 2em;
+      }
+    }
   }
   section.menu-wrapper {
     position:relative;
@@ -225,6 +249,11 @@ body {
     display:block;
     position:relative;
     height:4056px;
+  }
+  @media (max-width:1110px) {
+    section.menu-wrapper form {
+      height:3576px;
+    }
   }
 
   section.menu-wrapper form > div:first-of-type{
@@ -238,6 +267,47 @@ body {
     position:sticky;
     top:0;
     float:right;
+  }
+  @media (max-width:1110px) {
+    section.menu-wrapper form > div:first-of-type{
+      width:60%;
+      float:left;
+      // display:inline-block;
+    }
+    section.menu-wrapper article.order-summary {
+      padding:3em 0em 0em 0em;
+    }
+  }
+  @media (max-width:750px) {
+    section.menu-wrapper img.order-toggle {
+      display:block;
+      width: 60px;
+      height:60px;
+      padding:6px;
+      position:fixed;
+      top:130px;
+      right:0px;
+      z-index:10;
+
+    }
+    section.menu-wrapper form > div:first-of-type{
+      width:85%;
+    }
+    section.menu-wrapper form > div:last-of-type{
+      width:100%;
+      position:fixed;
+      background: #ffffff;
+      padding-bottom:2em;
+      padding-top:0em;
+      top:124px;
+      left:0;
+      .order-summary {
+        padding:2em;
+      }
+    }
+  }
+  img.order-toggle {
+    display:none;
   }
   article.order-summary {
     padding:3em 0 2em 4em;
@@ -290,6 +360,13 @@ body {
       text-transform:uppercase;
       margin-left:1em;
       display:inline-block;
+    }
+  }
+
+  @media (max-width:414px) {
+    section.navbar img{
+      width:60px;
+      height:60px;
     }
   }
 
