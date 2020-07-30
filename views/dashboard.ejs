@@ -40,7 +40,6 @@
                 <p>Client Phone: <%= orderPosts[order].user_phone%></p>
               </div>
               <div>
-                <% console.log(orderPosts[order].status) %>
                 <%  if (orderPosts[order].status === '0') { %>
                   <h4>STATUS: <span class="order-item-status">Pending</span></h4>
                 <% } else if ((currentTime - createdAt) < (orderPosts[order].status * 60 * 1000)) { %>
