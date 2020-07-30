@@ -114,6 +114,9 @@ body {
   // menu page pending banner
   #order-pending-banner {
     position:fixed;
+    display:flex;
+    align-items: center;
+    justify-content: center;
     padding: .5em;
     background:#2CA70A;
     color: $dark-color;
@@ -121,6 +124,21 @@ body {
     width:100%;
     z-index:4;
     border-radius:0 0 4px 4px;
+    .loading-gif {
+      width:20px;
+      margin-left:10px;
+    }
+  }
+  .order-done {
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    background:$light-color;
+    border-radius:4px;
+    height:200px;
+    padding:0 2em;
+    text-align:center;
   }
 
 

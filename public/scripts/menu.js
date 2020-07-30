@@ -66,7 +66,8 @@ $(document).ready(function () {
 
   $('.submit-order').on('mousedown',function(event){
     $('input.order-total').val($('.order-total-span').text());
-    $('body').prepend('<div id="order-pending-banner">YOUR ORDER IS BEING CONFIRMED BY THE CAPTAIN...</div>');
+    $('body').prepend('<div id="order-pending-banner">Please stay on the page while your order is being confirmed.. <img src="/photos/load.gif" class="loading-gif" alt="loading animation"/></div>');
+    $('.order-summary').html('<div class="order-done"><h3>Thanks!</h3><p>Your order has been placed.</p></div>');
 
 
   });
