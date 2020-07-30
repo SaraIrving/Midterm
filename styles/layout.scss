@@ -270,3 +270,19 @@ section.confirmed-wrapper {
     text-align:center;
   }
 }
+
+
+.order-pending {
+  background: $light-color;
+}
+.order-completed {
+  background: #D4D8D9;
+  opacity:.3;
+  transition: all 200ms ease;
+}
+.order-completed:hover {
+  opacity:1;
+}
+.order-in-progress {
+  background: #DCC79D;
+}
