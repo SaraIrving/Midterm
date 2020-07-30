@@ -375,11 +375,12 @@ body {
   // login page
 
   section.login-section {
-    // padding: 6em;
     display:flex;
     flex-direction: row;
     justify-content: center;
     min-height:50vh;
+    padding-top: 5em;
+    padding-bottom: 5em;
 
     form {
       display: flex;
@@ -394,6 +395,18 @@ body {
 
 
 //dashboard page
+
+@media (max-width:750px) {
+  section.orders-wrapper article.dash-order-item > div {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width:100%
+  }
+  article.dash-order-item {
+    flex-wrap:wrap;
+  }
+}
 
 article.dash-order-item {
   display: flex;
@@ -410,6 +423,7 @@ article.dash-order-item {
     padding: 1em;
     width:33.333333333%;
   }
+
   input {
     width:50px;
   }
@@ -455,6 +469,11 @@ section.confirmed-wrapper {
 
 footer {
   background-color: $dark-color;
+  background-image: url('/photos/big-chicken.png');
+  background-attachment: fixed;
+  background-size: 400px;
+  background-repeat:no-repeat;
+  background-position:70% 300px;
   display:flex;
   flex-direction:column;
   justify-content: center;
@@ -464,6 +483,23 @@ footer {
     color: $light-color;
     font-size:1.4em;
     text-align:center;
+  }
+}
+
+@media (max-width:1110px) {
+  footer {
+    background-position:10% 300px;
+  }
+}
+@media (max-width:750px) {
+  footer {
+    background-position:70% 500px;
+    h5 {
+      font-size:18px;
+    }
+    p {
+      font-size:16px;
+    }
   }
 }
 
@@ -503,6 +539,7 @@ text-align: center;
     color: $accent-color;
   }
 }
+
 section.features {
   padding-top:6em;
   justify-content: space-around;
@@ -523,3 +560,42 @@ section.features {
     }
   }
 }
+
+.map-wrapper {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height:500px;
+  overflow:hidden;
+  position:relative;
+}
+.map-image{
+  height: 100%;
+  width: auto;
+}
+
+@media (max-width:750px) {
+  section.features {
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+
+    article:nth-child(2) {
+      margin: 2em 0em;
+    }
+    article {
+      width: 80%;
+    }
+
+    article img{
+      margin-bottom: 10px;
+
+    }
+  }
+  .map-wrapper {
+    height:350px;
+  }
+
+}
+
+
