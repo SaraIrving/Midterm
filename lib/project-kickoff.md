@@ -110,6 +110,19 @@ POST to /orders
 - triggers pending notification banner
 - form success page
 
+
+ajax on the menu page inside interval which constantly returns the status from the order table matching the current order
+- routes/orders --> we have access to current order_id --> render and insert order data into banner 
+
+- OR from routes page, redirect to confirmation page and insert data? BUT seems like we can't perform ajax call on route page
+
+- on the scripts/menu.js page, which our menu is linking to. BUT we don't seem to have access to the current order ID, since it's generated after we submit the order (from route)
+
+- on the scripts/menu.js page, ajax a call to /order-status route which then queries for the db change, 
+
+- menu page when user clicks place order, set a cookie with their order_id 
+- order confirmation page, check db, for 
+
 Confirmation page
 - request all tables info to display on page
   IF response status from restaurant is > 30 mins

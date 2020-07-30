@@ -3,7 +3,9 @@ const router  = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    db.query(`SELECT * FROM orders JOIN order_details ON orders.id = order_id JOIN menu ON menu_id = menu.id ORDER BY order_id DESC, created_at`)
+    db.query(`SELECT
+    orders.id as id, user_name, user_phone, total, status, created_at, menu_id, order_details.order_id, qty, item_name, price, description, image_url
+    FROM orders JOIN order_details ON orders.id = order_id JOIN menu ON menu_id = menu.id ORDER BY order_id DESC, created_at`)
       .then((data) => {
         const orders = data.rows;
 
@@ -23,7 +25,6 @@ module.exports = (db) => {
             orderPosts[orderLineItem.order_id].allItems.push([orderLineItem['item_name'],orderLineItem['qty']]);
           }
         }
-        console.log(orderPosts);
 
         // res.json({ orders });
         res.render('dashboard', { orders, orderPosts })

@@ -7,5 +7,5 @@ CREATE TABLE orders (
   user_phone VARCHAR(255),
   total INTEGER,
   status VARCHAR(32),
-  created_at TIMESTAMP DEFAULT NOW()
+  created_at TIMESTAMPTZ DEFAULT NOW()
 );

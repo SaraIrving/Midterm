@@ -63,17 +63,15 @@ module.exports = (db) => {
         });
 
         const interval = setInterval(() => {
-          console.log('interval has been called')
-          db.query(`SELECT id FROM orders WHERE id = ${tempData.id}`)
+          db.query(`SELECT id, user_name, status, total FROM orders WHERE id = ${tempData.id}`)
           .then((data) => {
             if (data.rows[0].status !== '0') {
-                let status = tempData;
+                let confirmedOrder = data.rows[0];
                 clearInterval(interval);
-                res.render('order-confirmation',{ status });
+                res.render('order-confirmation',{ confirmedOrder });
             }
           })
-        }, 10000);
-        // function fetchdata(){  $.ajax({   url: 'fetch_details.php',   type: 'post',   success: function(response){    // Perform operation on the return value    alert(response);   }  }); }  $(document).ready(function(){  setInterval(fetchdata,5000); });
+        }, 7000);
       })
     })
     .catch((err) => {

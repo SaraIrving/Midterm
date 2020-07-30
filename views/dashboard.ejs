@@ -11,6 +11,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
+
+
     <% include partials/_header %>
     <main>
       <section class="orders-wrapper">
@@ -28,7 +30,10 @@
                 </ul>
               </div>
               <div>
-                <h5>Ordered At: <%= orderPosts[order].created_at%></h5>
+                <% let createdAt = Date.parse(orderPosts[order].created_at); %>
+                <% let newDate = new Date(createdAt); %>
+                <% let createdAtString = newDate.toLocaleString(); %>
+                <h5>Ordered At: <%= createdAtString %></h5>
                 <p>Client Name: <%= orderPosts[order].user_name%></p>
                 <p>Client Phone: <%= orderPosts[order].user_phone%></p>
               </div>

@@ -264,3 +264,9 @@ section.orders-wrapper > article {
   z-index:4;
   border-radius:0 0 4px 4px;
 }
+
+section.confirmed-wrapper {
+  h3, p {
+    text-align:center;
+  }
+}

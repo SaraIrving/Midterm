@@ -18,7 +18,6 @@ module.exports = (db) => {
         // res.json({ menu }); // returning a promise with the menu as object
       })
       .then((data) => {
-        let status = data.rows;
 
         client.messages.create({
           to: customerPhone,
@@ -26,7 +25,7 @@ module.exports = (db) => {
           body: `Your order is confirmed, pickup from Captain Clucks in ${orderStatus} minutes!`
         });
 
-        res.render('order-update', { status });
+        res.redirect('dashboard');
       })
       .catch(err => {
         res
