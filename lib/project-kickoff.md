@@ -50,23 +50,25 @@
 - As a user I want to view the menu.
 - As a user I want to then choose which menu items, and quantity.
 - As a user I want to be able to change my menu items before I order.
-- As a user I can see my order total before I order / after I update my order.
+- As a user I can see my order total before I order / when I update my order.
 - As a user I want to put in my contact info, and press order to order my food.
 - As a user I want to receive order confirmation, and time for pickup.
 - As an admin, I want to receive an SMS when an order is placed.
-- As an admin, I want to send an SMS to the app containing the pickup time AND then, the app conveys the confirmation and pickup time to the user VIA SMS.
 - As a user I don't want to accidentally order more than once.
+ - they click place order, the form replaced with thank you message.
+ - change banner to read: Please wait while order is being confirmed.. 
+ - It would be nice for banner to have . . . loading animation
 - As an admin, I can login to my dashboard and view a list of pending and past orders.
 - As an admin, I can specify wait time, which will confirm the order.
+- responsive
 
 ### Stretch Scenarios
+- As an admin, I want to send an SMS to the app containing the pickup time AND then, the app conveys the confirmation and pickup time to the user VIA SMS.
 - As a user it would be ideal to have a cancel SMS command feature, if I want to cancel my order
-- As an admin, would be necessary to add or edit the menu
-- As an admin, would be nice to offer specials
-- Change formatting of how drinks are displayed
-- actually add google maps instead of a photo of a map 
-- the confirmation page displays the pickup time after it is sent from the restaurant (in addition to notifying the client via TEXT)
-- have an admin user that can view all post orders 
+- As an admin, would be necessary to add or edit the menu ****
+- As an admin, would be nice to offer specials ****
+- Change formatting of how drinks are displayed **
+- actually add google maps instead of a photo of a map **
 - create a filter for results in dashboard 
 
 ## Tables
@@ -142,6 +144,26 @@ ADMIN USER
 - tackle twilio
 - design
 
+
+
+
+- they click place order, the form replaced with thank you message. x .25
+- change banner to read: Please wait while order is being confirmed.. x .000
+- It would be nice for banner to have . . . loading animation x .25
+- dashboard test orders from fresh, make sure the orders display in proper order .25
+- responsive **** x 2hrs
+- As an admin, would be necessary to add or edit the menu **** x 2 - 4
+- Change formatting of how drinks are displayed ** .75
+- As an admin, would be nice to offer specials **** 1 - 3 -- 
+- actually add google maps instead of a photo of a map ** 2 - 5 --
+
+- presentation prep, fake presentation x .75
+- presentation + briefing for tomorrow x 1
+
+5.25 hrs
+3.25 hrs
+
+~ 8.5
 
 ## MVP vs MVD
 - There is a concept in development of an MVP, the Minimum Viable Product
