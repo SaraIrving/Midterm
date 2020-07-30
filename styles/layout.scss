@@ -4,6 +4,10 @@ $light-color: #E8F9EA;
 $dark-color: #293A42;
 $accent-color: #A7720A;
 
+
+
+// global styles
+
 body {
   box-sizing:border-box;
   background-color: #ffffff;
@@ -13,6 +17,9 @@ body {
     transition:all 200ms ease;
     letter-spacing:1.6px;
     margin:5px 0 10px 0;
+  }
+  h1, h2, h3, h4, h5, h6, p {
+    color: $dark-color;
   }
   input, textarea {
     padding:.45em;
@@ -29,6 +36,18 @@ body {
     color:$light-color;
     border: none;
   }
+  .abutton {
+    padding:.65em 1.2em .5em;
+    line-height:1em;
+    text-transform:uppercase;
+    background-color: $dark-color;
+    transition: all 200ms ease;
+    color:$light-color;
+    border: none;
+  }
+  .abutton:hover {
+    background-color:$accent-color;
+  }
   button:hover {
     background-color:$accent-color;
   }
@@ -37,6 +56,13 @@ body {
   }
   a.no-hover {
     transform:none;
+  }
+  ul {
+    padding-left:0px;
+    list-style-type: none;
+    line-height:1.4em;
+    color:$accent-color;
+    margin-bottom:0px;
   }
 
   div, span, button, article, a, input, textarea {
@@ -64,39 +90,68 @@ body {
     }
   }
 
-  section.navbar {
-    background-color: $dark-color;
-    padding-top: 2em;
-    padding-bottom: 2em;
-    justify-content:space-between;
+
+  // dynamic styles, used with jquery
+
+  .hide {
+    display: none;
   }
-  section.navbar nav{
-    display:flex;
-    justify-content:space-between;
+  // dashboard page dynamics
+  .order-pending {
+    background: $light-color;
+  }
+  .order-completed {
+    background: #D4D8D9;
+    opacity:.3;
+    transition: all 200ms ease;
+  }
+  .order-completed:hover {
+    opacity:1;
+  }
+  .order-in-progress {
+    background: #DCC79D;
+  }
+  // menu page pending banner
+  #order-pending-banner {
+    position:fixed;
+    padding: .5em;
+    background:#2CA70A;
+    color: $dark-color;
+    text-align:center;
     width:100%;
-    align-items:center;
-    a {
-      color:$light-color;
-      font-size:1.3em;
-      text-transform:uppercase;
-    }
+    z-index:4;
+    border-radius:0 0 4px 4px;
   }
+
+
+  // menu page
 
   section.hero {
     background-color: $accent-color;
-    display: flex;
-    flex-direction:column;
-    justify-content: center;
-    align-items:center;
-    padding:6em;
-    text-align:center;
+    background-image: url('../photos/chicken-bg.jpg');
+    background-position:center center;
+    background-attachment:fixed;
+    padding:0px;
     h2 {
       color: $light-color;
     }
     h3 {
       color: $dark-color;
     }
+    div {
+      display:block;
+      width:100vw;
+      height:267px;
+      background-color:rgba(167,114,10,.7);
+      display: flex;
+      flex-direction:column;
+      justify-content: center;
+      align-items:center;
+      padding:6em;
+      text-align:center;
+    }
   }
+
 
   article.item-wrapper {
     display: flex;
@@ -188,24 +243,30 @@ body {
       font-size:14px;
     }
   }
-  footer {
+
+
+
+  // navbar
+
+  section.navbar {
     background-color: $dark-color;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    justify-content:space-between;
+  }
+  section.navbar nav{
     display:flex;
-    flex-direction:column;
-    justify-content: center;
-    align-items: center;
-    padding: 4em 0;
-    p, h5 {
-      color: $light-color;
-      font-size:1.4em;
-      text-align:center;
+    justify-content:space-between;
+    width:100%;
+    align-items:center;
+    a {
+      color:$light-color;
+      font-size:1.3em;
+      text-transform:uppercase;
+      margin-left:1em;
+      display:inline-block;
     }
   }
-  .hide {
-    display: none;
-  }
-
-
 
 
 
@@ -231,19 +292,36 @@ body {
 
 
 //dashboard page
+
 article.dash-order-item {
   display: flex;
   flex-direction: row;
   border: 3px solid $dark-color;
   padding: 2em;
   margin-bottom: 1em;
+  align-items:flex-start;
 
-  div {
+  > div {
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 1em;
-
+    width:33.333333333%;
+  }
+  input {
+    width:50px;
+  }
+  div:last-of-type {
+    display:flex;
+    justify-content: flex-end;
+    flex-wrap:wrap;
+    text-align:right;
+    h4 {
+      margin-bottom:20px;
+    }
+    .order-form-inputs span {
+      margin:10px 10px 0 0;
+    }
   }
 
 }
@@ -251,38 +329,95 @@ article.dash-order-item {
 section.orders-wrapper > article {
   display:flex;
   flex-direction: column-reverse;
-}
-
-
-#order-pending-banner {
-  position:fixed;
-  padding: .5em;
-  background:#2CA70A;
-  color: $dark-color;
-  text-align:center;
   width:100%;
-  z-index:4;
-  border-radius:0 0 4px 4px;
+  align-items:space-between;
 }
+
+
+
+// confirmation page
 
 section.confirmed-wrapper {
-  h3, p {
+  justify-content: center;
+  h3, p, h2, h4 {
     text-align:center;
+  }
+  h3 {
+    color: $accent-color;
   }
 }
 
 
-.order-pending {
-  background: $light-color;
+
+// footer
+
+footer {
+  background-color: $dark-color;
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  padding: 4em 0;
+  p, h5 {
+    color: $light-color;
+    font-size:1.4em;
+    text-align:center;
+  }
 }
-.order-completed {
-  background: #D4D8D9;
-  opacity:.3;
-  transition: all 200ms ease;
+
+//home page
+
+section.hero.home-hero {
+  min-height: 500px;
+  background-image:url('../photos/home-bg.jpg');
+  background-size:cover;
+   > div {
+    min-height: 500px;
+  }
+  h2{
+    font-size: 2.5em;
+    letter-spacing: 2px;
+    margin-bottom:30px;
+  }
+  .abutton {
+    border: solid 3px $dark-color;
+    background: none;
+    color: $dark-color;
+    font-weight:700;
+  }
+  .abutton:hover {
+    background:$dark-color;
+    color:$light-color;
+  }
 }
-.order-completed:hover {
-  opacity:1;
+.home-wrapper {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+
+  h3{
+    color: $accent-color;
+  }
 }
-.order-in-progress {
-  background: #DCC79D;
+section.features {
+  padding-top:6em;
+  justify-content: space-around;
+  article {
+    width:20%;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+    text-align:center;
+    img {
+      margin-bottom:30px;
+      width:120px;
+      transition:all 200ms ease;
+    }
+    img:hover {
+      transform:scale(1.04);
+    }
+  }
 }

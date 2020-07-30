@@ -59,7 +59,7 @@ app.use("/api/widgets", widgetsRoutes(db));
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 app.get("/", (req, res) => {
-  res.redirect("/menu");
+  res.render("home");
 });
 
 app.get("/login", (req, res) => {
@@ -69,6 +69,12 @@ app.get("/login", (req, res) => {
 app.post("/login", (req,res) => {
   res.redirect('/dashboard')
 });
+
+app.get("/confirm", (req, res) => {
+  let confirmedOrder = {};
+  res.render("order-confirmation", { confirmedOrder });
+});
+
 
 // app.get("/menu", (req, res) => {
 //   res.render("index");

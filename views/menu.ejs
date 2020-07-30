@@ -14,10 +14,12 @@
   <body>
     <% include partials/_header %>
     <section class="hero">
-      <article>
-        <h2>GOOD EATS START HERE</h2>
-        <h3>Order up some clucks!</h3>
-      </article>
+      <div>
+        <article>
+          <h2>GOOD EATS START HERE</h2>
+          <h3>Order up some clucks!</h3>
+        </article>
+      </div>
     </section>
     <main>
       <section class="menu-wrapper">
@@ -29,7 +31,7 @@
                   <img src="<%= menu_item.image_url %>" alt="<%= menu_item.item_name %>" width="200">
                   <div class="item-specifics">
                     <div class="name-description">
-                      <h4 class="item-name"><%= menu_item.item_name %></4><h4>  |  </h4><h4 class="item-price"><%= (menu_item.price / 100).toFixed(2) %></h4>
+                      <h4 class="item-name"><%= menu_item.item_name %>&nbsp;</4><h4>|&nbsp;</h4><h4 class="item-price">$<%= (menu_item.price / 100).toFixed(2) %></h4>
                       <p><%= menu_item.description %></p>
                       <span>Add to order:</span>
                       <input class="item-qty" type="number" min="0" name="<%= menu_item.item_name %>" />

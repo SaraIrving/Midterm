@@ -24,7 +24,7 @@
             <article class="dash-order-item">
               <div class="dash-order-summary">
                 <h4 class="dash-order-id">Order ID: <%= orderPosts[order].order_id%></h4>
-                <h5 class="dash-order-total">Order Total: <%= (orderPosts[order].total /100).toFixed(2)%></h5>
+                <h5 class="dash-order-total">Order Total: $<%= (orderPosts[order].total /100).toFixed(2)%></h5>
                 <ul class="dash-order-list">
                   <% for (let item of orderPosts[order].allItems) { %>
                   <li><%= item[0]%> x <%= item[1]%></li>
