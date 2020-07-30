@@ -15,6 +15,8 @@
 
     <% include partials/_header %>
     <main>
+
+      <% let currentTime = Date.now(); %>
       <section class="orders-wrapper">
         <article >
           <% for (let order in orderPosts) { %>
@@ -38,7 +40,15 @@
                 <p>Client Phone: <%= orderPosts[order].user_phone%></p>
               </div>
               <div>
-                <h4>STATUS: <span class="order-item-status"><%= orderPosts[order].status%></span></h4>
+                <% console.log(orderPosts[order].status) %>
+                <%  if (orderPosts[order].status === '0') { %>
+                  <h4>STATUS: Pending</h4>
+                <% } else if ((currentTime - createdAt) < (orderPosts[order].status * 60 * 1000)) { %>
+                  <h4>STATUS: <span class="order-item-status">In Progress</span></h4>
+                <% } else { %>
+                  <h4>STATUS: <span class="order-item-status">Completed</span></h4>
+                <% } %>
+
                 <div class="order-form-inputs">
                   <span>CONFIRM WAIT TIME: </span>
                   <input type="hidden" name="order_id" value="<%= orderPosts[order].order_id%>" />

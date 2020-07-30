@@ -12,11 +12,11 @@ module.exports = (db) => {
         let orderPosts = {};
 
         for (let orderLineItem of data.rows) {
-          if (orderLineItem.status !== '0') {
-            orderLineItem.status = 'completed';
-          } else {
-            orderLineItem.status = 'pending';
-          }
+          // if (orderLineItem.status !== '0') {
+          //   orderLineItem.status = 'completed';
+          // } else if (orderLineItem.status === '0') {
+          //   orderLineItem.status = 'pending';
+          // }
           if (!orderPosts[orderLineItem['order_id']]) {
             orderPosts[orderLineItem.order_id] = orderLineItem;
             orderPosts[orderLineItem.order_id].allItems = [[orderLineItem['item_name'],orderLineItem['qty']]];
