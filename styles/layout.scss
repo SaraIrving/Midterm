@@ -150,6 +150,12 @@ body {
 
   // menu page
 
+  section.hero.subhero {
+    background-position:0px 50%;
+  }
+  section.hero.subhero div{
+    background-color:rgba(41,58,66,.7) !important;
+  }
   section.hero {
     background-color: $accent-color;
     background-image: url('../photos/chicken-bg.jpg');
@@ -354,21 +360,37 @@ body {
 
   section.navbar {
     background-color: $dark-color;
-    padding-top: 2em;
-    padding-bottom: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
     justify-content:space-between;
+    img {
+      width:90px;
+      height:90px;
+      transform:translateY(5px);
+    }
   }
   section.navbar nav{
     display:flex;
     justify-content:space-between;
     width:100%;
     align-items:center;
-    a {
+    a.nav-menu-link {
       color:$light-color;
       font-size:1.3em;
       text-transform:uppercase;
       margin-left:1em;
       display:inline-block;
+      padding:.5em 1em;
+    }
+    a.nav-menu-link:hover {
+      background:rgba(167,114,10,.3)
+    }
+    a.logout-link {
+      background:$accent-color;
+    }
+    a.logout-link:hover {
+      background:$light-color;
+      color:$dark-color;
     }
   }
 
@@ -608,3 +630,25 @@ section.features {
 }
 
 
+// edit-menu page
+
+
+.new-item-button {
+  width:100%;
+}
+
+article.order-summary.edit-menu-order-summary {
+  div:nth-child(3) {
+    border-top:none;
+  }
+  h5 {
+    font-size: 1.3em;
+  }
+  .order-list {
+    li  {
+      margin-bottom:1em;
+      font-size:1em;
+    }
+  }
+
+}

@@ -73,7 +73,7 @@ $(document).ready(function () {
     $('.order-summary').append('<div class="order-done"><h3>Thanks!</h3><p>Your order has been placed.</p></div>');
   });
 
-  $('.order-toggle').on('click',function(event) {
+  $('.order-toggle').on('click',function(event) {dy =
     $('section.menu-wrapper form > div:last-of-type').toggle();
   });
 

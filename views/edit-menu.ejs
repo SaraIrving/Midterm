@@ -11,18 +11,17 @@
     <script defer type="text/javascript" src="/scripts/edit-menu.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
-  <body>
+  <body class="edit-menu-body">
     <% include partials/_header %>
-    <section class="hero">
+    <section class="hero subhero">
       <div>
         <article>
-          <h2>GOOD EATS START HERE</h2>
-          <h3>Order up some clucks!</h3>
+          <h2>Edit Menu</h2>
         </article>
       </div>
     </section>
     <main>
-      <section class="menu-wrapper">
+      <section class="menu-wrapper" id="menu-wrapper">
         <img src="/photos/basket.png" class="order-toggle" />
         <article >
           <form action="/new-menu-item" method="post" class="menu-form">
@@ -36,6 +35,7 @@
                       <p><%= menu_item.description %></p>
                       <div>
                         <button type="submit" class="edit-menu-item" name="<%= menu_item.item_name %>">Edit Item</button>
+                        <a href="#" class="delete-menu-item abutton" name="item_name" value="<%= menu_item.item_name %>">Delete Item</a>
                       </div>
                     </div>
                   </div>
@@ -44,13 +44,15 @@
                 <button type="submit" class="new-item-button" name="new_item_name">New Item</button>
             </div>
             <div>
-              <article class="order-summary">
+              <article class="order-summary edit-menu-order-summary">
                 <div>
                   <h5>Item to edit:</h5>
                 </div>
                 <div>
                   <ul class="order-list">
                   </ul>
+                </div>
+                <div>
                 </div>
                 <div>
                   <input type="text" name="update_item_name" placeholder="Item Name">
