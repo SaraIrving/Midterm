@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <script defer type="text/javascript" src="/scripts/menu.js"></script>
+    <script defer type="text/javascript" src="/scripts/edit-menu.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
@@ -25,7 +25,7 @@
       <section class="menu-wrapper">
         <img src="/photos/basket.png" class="order-toggle" />
         <article >
-          <form action="/orders" method="post" class="menu-form">
+          <form action="/new-menu-item" method="post" class="menu-form">
             <div>
               <% for (let menu_item of menu) { %>
                 <article class="item-wrapper">
@@ -35,34 +35,31 @@
                       <h4 class="item-name"><%= menu_item.item_name %>&nbsp;</4><h4>|&nbsp;</h4><h4 class="item-price"><%= (menu_item.price / 100).toFixed(2) %></h4>
                       <p><%= menu_item.description %></p>
                       <div>
-                        <span>Add to order:</span>
-                        <input class="item-qty" type="number" min="0" name="<%= menu_item.item_name %>" />
+                        <button type="submit" class="edit-menu-item" name="<%= menu_item.item_name %>">Edit Item</button>
                       </div>
                     </div>
                   </div>
                 </article>
                 <% } %>
+                <button type="submit" class="new-item-button" name="new_item_name">New Item</button>
             </div>
             <div>
               <article class="order-summary">
                 <div>
-                  <h5>ORDER:</h5>
+                  <h5>Item to edit:</h5>
                 </div>
                 <div>
                   <ul class="order-list">
                   </ul>
                 </div>
                 <div>
-                  <input type="hidden" class="order-total" name="order-total"/>
-                  <p>TOTAL:<span class="order-total order-total-span"></span></p>
+                  <input type="text" name="update_item_name" placeholder="Item Name">
+                  <input type="text" name="update_image_url" placeholder="Image URL">
+                  <input type="number" name="update_item_price" placeholder="Item Price">
+                  <textarea name="update_item_description" placeholder="Item Description"></textarea>
                 </div>
                 <div>
-                  <input type="text" name="customer-name" placeholder="Your Name">
-                  <input type="tel" name="customer-phone" placeholder="Phone">
-                  <textarea name="special-instructions" placeholder="Special Instructions"></textarea>
-                </div>
-                <div>
-                  <button class="submit-order" type="submit">PLACE ORDER</button>
+                  <button class="submit-item-update" type="submit">Update Item</button>
                 </div>
 
               </article>

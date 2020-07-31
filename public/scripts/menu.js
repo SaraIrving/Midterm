@@ -74,7 +74,6 @@ $(document).ready(function () {
   });
 
   $('.order-toggle').on('click',function(event) {
-    // $('section.menu-wrapper form > div:last-of-type').css('display','none');
     $('section.menu-wrapper form > div:last-of-type').toggle();
   });
 

@@ -42,11 +42,15 @@ const menuRoutes = require("./routes/menu");
 const orderRoutes = require("./routes/orders");
 const orderUpdateRoutes = require("./routes/order-update");
 const dashboardRoutes = require("./routes/dashboard");
+const editMenuRoutes = require("./routes/edit-menu");
+const newMenuItemRoutes = require("./routes/new-menu-item");
 
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/menu", menuRoutes(db));
+app.use("/new-menu-item", newMenuItemRoutes(db));
+app.use("/edit-menu", editMenuRoutes(db));
 app.use("/dashboard", dashboardRoutes(db));
 app.use("/orders", orderRoutes(db));
 app.use("/order-update", orderUpdateRoutes(db));

@@ -211,6 +211,14 @@ body {
     div.name-description {
       display: flex;
       flex-wrap:wrap;
+      div {
+        width:100%;
+        text-align:right;
+        margin-top:2em;
+        input {
+          background:$light-color;
+        }
+      }
       // flex-direction: column;
       span {
         display:inline;
@@ -294,6 +302,7 @@ body {
       width:85%;
     }
     section.menu-wrapper form > div:last-of-type{
+      display:none;
       width:100%;
       position:fixed;
       background: #ffffff;
@@ -473,7 +482,7 @@ footer {
   background-attachment: fixed;
   background-size: 400px;
   background-repeat:no-repeat;
-  background-position:70% 300px;
+  background-position:70% 550px;
   display:flex;
   flex-direction:column;
   justify-content: center;
