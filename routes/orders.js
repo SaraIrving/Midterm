@@ -71,9 +71,11 @@ module.exports = (db) => {
         }, 7000);
       })
     })
-    .catch((err) => {
-      console.log(err);
-    })
+    .catch(err => {
+      res
+        .status(500)
+        .json({ error: err.message });
+    });
 
   });
   return router;

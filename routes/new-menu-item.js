@@ -47,8 +47,10 @@ module.exports = (db) => {
       .then((data) => {
         res.redirect('/edit-menu');
       })
-      .catch((err) => {
-        console.log('error: ', err);
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
       });
     };
   });
