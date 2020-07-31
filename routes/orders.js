@@ -34,14 +34,14 @@ module.exports = (db) => {
     // Define a global scope variable which will hold the current order ID, and can be used in multiple places
     let currentOrderId;
     // Set name, phone, total, and status as new order record in DB orders table
-    db.query(`INSERT INTO orders (user_name, user_phone, total, status) VALUES ('${orderName}', ${orderPhone}, ${orderTotal}, 0) RETURNING *`)
+    db.query(`INSERT INTO orders (user_name, user_phone, total, status) VALUES ($1, $2, $3, 0) RETURNING *`, [orderName, orderPhone, orderTotal])
     .then((data) => {
       // Set currentOrderId to hold the order id of the menu item in question
       currentOrderId = data.rows[0].id;
       // Loop through the contents of the orderItems array to isolate the individual menu item and it's quantity
       for (let menuItem of orderItems) {
         // Insert menu item, it's respective quantity, it's order ID into the order_details table in the DB
-          db.query(`INSERT INTO order_details (menu_id, order_id, qty) VALUES ((SELECT id FROM menu WHERE item_name = '${menuItem[0]}'), ${data.rows[0].id}, ${menuItem[1]})`);
+          db.query(`INSERT INTO order_details (menu_id, order_id, qty) VALUES ((SELECT id FROM menu WHERE item_name = $1), $2, $3)`, [menuItem[0], data.rows[0].id, menuItem[1]]);
       }
     })
     .then(() => {
