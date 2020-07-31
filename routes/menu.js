@@ -9,10 +9,13 @@ const express = require('express');
 const router  = express.Router();
 
 module.exports = (db) => {
+  // Get request to render the menu page
   router.get("/", (req, res) => {
+    // Query everything from the menu table in the DB
     db.query(`SELECT * FROM menu;`)
       .then(data => {
         const menu = data.rows;
+        // Render the menu ejs with all the menu items injected into it
         res.render('menu', { menu })
       })
       .catch(err => {
@@ -21,6 +24,5 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
-
   return router;
 };
