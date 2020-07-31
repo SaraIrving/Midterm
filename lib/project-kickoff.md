@@ -151,7 +151,7 @@ ADMIN USER
 - change banner to read: Please wait while order is being confirmed.. x .000 -- 
 - It would be nice for banner to have . . . loading animation x .25 --
 - dashboard test orders from fresh, make sure the orders display in proper order .25 --
-- responsive **** x 2hrs
+- responsive **** x 2hrs -- 
 - As an admin, would be necessary to add or edit the menu **** x 2 - 4
 - Change formatting of how drinks are displayed ** .75
 - As an admin, would be nice to offer specials **** 1 - 3 -- 

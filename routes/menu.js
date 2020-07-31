@@ -14,7 +14,6 @@ module.exports = (db) => {
     db.query(`SELECT * FROM menu;`)
       .then(data => {
         const menu = data.rows;
-        // res.json({ menu }); // returning a promise with the menu as object
         res.render('menu', { menu })
       })
       .catch(err => {

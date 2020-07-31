@@ -19,6 +19,7 @@ module.exports = (db) => {
     let orderName = req.body['customer-name'];
     let orderTotal = req.body['order-total'] * 100;
 
+    // grab all menu items from order, and push to orderItems array
     for (let [key,value] of Object.entries(req.body)) {
       if (value) {
         if (key !== 'customer-name' && key !== 'customer-phone' && key !== 'special-instructions' && key !== 'order-total') {
@@ -30,8 +31,7 @@ module.exports = (db) => {
 
 
     //put name, phone, total into orders table
-
-    let tempData;
+    let tempData; // returning value of order record that got stored into the orders table
 
     db.query(`INSERT INTO orders (user_name, user_phone, total, status) VALUES ('${orderName}', ${orderPhone}, ${orderTotal}, 0) RETURNING *`)
     .then((data) => {
@@ -39,7 +39,6 @@ module.exports = (db) => {
         tempData = data.rows[0];
           db.query(`INSERT INTO order_details (menu_id, order_id, qty) VALUES ((SELECT id FROM menu WHERE item_name = '${menuItem[0]}'), ${data.rows[0].id}, ${menuItem[1]})`);
       }
-
     })
     .then((data) => {
       db.query(`SELECT * FROM orders JOIN order_details ON orders.id = order_id JOIN menu ON menu_id = menu.id WHERE order_id = ${tempData.id}`)
