@@ -69,10 +69,10 @@ CAPTAIN CLUCKS WEB APP
 !["Dashboard with orders of various status states"](https://raw.githubusercontent.com/SaraIrving/Midterm/orders/public/photos/screenshots/dashboard2.png)
 
 ### Edit Menu for Admins
-!["Admins can edit the menu"](https://raw.githubusercontent.com/SaraIrving/Midterm/orders/public/photos/screenshots/login.png)
+!["Admins can edit the menu"](https://github.com/SaraIrving/Midterm/blob/orders/public/photos/screenshots/edit-menu.png?raw=true)
 
 ### Admins can add new items to the menu
-!["Admins can add new items to the menu"](https://raw.githubusercontent.com/SaraIrving/Midterm/orders/public/photos/screenshots/edit-menu2.png)
+!["Admins can add new items to the menu"](https://github.com/SaraIrving/Midterm/blob/orders/public/photos/screenshots/edit-menu2.png?raw=true)
 
 
 
