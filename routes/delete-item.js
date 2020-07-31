@@ -1,3 +1,10 @@
+/*
+ * All delete-item routes for /delete-item are defined here
+ * Since this file is loaded in server.js into /delete-item,
+ *   these routes are mounted onto /delete-item
+ * See: https://expressjs.com/en/guide/using-middleware.html#middleware.router
+ */
+
 const express = require('express');
 const router  = express.Router();
 

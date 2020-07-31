@@ -1,3 +1,10 @@
+/*
+ * All order-update routes for /order-update are defined here
+ * Since this file is loaded in server.js into /order-update,
+ *   these routes are mounted onto /order-update
+ * See: https://expressjs.com/en/guide/using-middleware.html#middleware.router
+ */
+
 const express = require('express');
 const router  = express.Router();
 

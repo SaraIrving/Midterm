@@ -1,4 +1,3 @@
-
 /*
  * All routes for Menu are defined here
  * Since this file is loaded in server.js into /menu,

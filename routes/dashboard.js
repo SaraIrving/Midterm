@@ -1,3 +1,10 @@
+/*
+ * All dashboard routes for /dashboard are defined here
+ * Since this file is loaded in server.js into /dashboard,
+ *   these routes are mounted onto /dashboard
+ * See: https://expressjs.com/en/guide/using-middleware.html#middleware.router
+ */
+
 const express = require('express');
 const router  = express.Router();
 
