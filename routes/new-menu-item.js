@@ -1,28 +1,33 @@
+/*
+ * All dashboard routes for /new-menu-item are defined here
+ * Since this file is loaded in server.js into /new-menu-item,
+ *   these routes are mounted onto /new-menu-item
+ * See: https://expressjs.com/en/guide/using-middleware.html#middleware.router
+ */
+
 const express = require('express');
 const router  = express.Router();
 
 module.exports = (db) => {
+  // Handle post request to /new-menu-item to add or edit a menu item in DB
   router.post("/", (req, res) => {
+    // Store our form data into variables
     let newItemName = req.body['new_menu_item']; // either undefined or defined
-    // let itemName = req.body['menu_item']; // either undefined of defined
     let updatedName = req.body['update_item_name'];
     let updatedDescription = req.body['update_item_description'];
     let updatedPrice = req.body['update_item_price'];
     let updatedImage = req.body['update_image_url'];
     let oldName = req.body['menu_item'];
-
-    // console.log('req.body = ', req.body);
-    // console.log('oldName when editing an existing item = ', oldName);
-    // console.log("newItemName = ", newItemName);
-
+    // Check if we're supposed to add a new item into the menu table in DB
     if (newItemName) {
-      console.log('updatedPrice', updatedPrice);
+      // Insert new item into menu table in DB
       db.query(`INSERT INTO menu (item_name, price, description, image_url)
       VALUES ('${updatedName}', ${updatedPrice}, '${updatedDescription}','${updatedImage}') RETURNING *;`)
       .then((data) => {
+        // Redirect to the edit-menu ejs which will load and display all menu item's including the new item
         res.redirect('/edit-menu');
       });
-    } else {
+    } else { // Instead, we're updating an existing menu item in the DB
       db.query(`UPDATE menu
       SET item_name = COALESCE('${updatedName}', item_name),
       price = COALESCE(${updatedPrice}, price),
@@ -30,21 +35,8 @@ module.exports = (db) => {
       image_url = COALESCE('${updatedImage}', image_url)
       WHERE item_name = '${oldName}'
       RETURNING *;`)
-
-
-
-
-//       UPDATE some_table SET
-//   column_1 = COALESCE(param_1, column_1),
-//   column_2 = COALESCE(param_2, column_2),
-//   column_3 = COALESCE(param_3, column_3),
-//   column_4 = COALESCE(param_4, column_4),
-//   column_5 = COALESCE(param_5, column_5)
-// WHERE id = some_id;
-
-
-
       .then((data) => {
+        // Redirect to the edit-menu ejs which will load and display all menu item's including the updated item
         res.redirect('/edit-menu');
       })
       .catch(err => {
