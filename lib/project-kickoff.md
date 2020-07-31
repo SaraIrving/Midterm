@@ -6,7 +6,7 @@
 <!-- <!-- - Wiki Map -->
 - Quiz App
 - Story Creator\
-- Decision Maker
+- Decision MakerC
 - PasswordKeepR
 - Smart TODO List
 - Resource Wall
@@ -18,7 +18,8 @@
 
 - They have the form: As a ___, I want to _, because ____.
 - eg. As a user, I want to be able to save posts, because I want to review them later.
-- User stories can also be negated: \s a __, I shouldn't be able to _, because ___.
+- User stories can also be negated: \s a __, I shoul
+dn't be able to _, because ___.
 - eg. As a user, I shouldn't be able to edit other users posts, because I don't own those posts.
 
 ## RESTAURANT DETAILS\
@@ -165,6 +166,41 @@ ADMIN USER
 
 ~ 8.5
 
+ADMIN USER
+- send get to /login to go to login page
+- send post to /login to redirect to dashboard
+- send get to /dashboard requests order and order_details from db to display orders on page, and renders dashboard page
+- send post on /order-update which updates the order status from to value of pickup wait time.
+- send post to twilio to SMS customer
+
+## List it out
+- create views ejs skeletons
+- jquery up the menu form
+- route it up, aside from twilio
+- tackle twilio
+- design
+
+
+
+
+- they click place order, the form replaced with thank you message. x .25 --
+- change banner to read: Please wait while order is being confirmed.. x .000 -- 
+- It would be nice for banner to have . . . loading animation x .25 --
+- dashboard test orders from fresh, make sure the orders display in proper order .25 --
+- responsive **** x 2hrs -- 
+- As an admin, would be necessary to add or edit the menu **** x 2 - 4
+- Change formatting of how drinks are displayed ** .75
+- As an admin, would be nice to offer specials **** 1 - 3 -- 
+- actually add google maps instead of a photo of a map ** 2 - 5 --
+
+- presentation prep, fake presentation x .75
+- presentation + briefing for tomorrow x 1
+
+5.25 hrs
+3.25 hrs
+
+~ 8.5
+
 ## MVP vs MVD
 - There is a concept in development of an MVP, the Minimum Viable Product
 - An MVP has just enough features to be useful to a user
@@ -256,3 +292,20 @@ app.get('/login/:id', (req, res) => {
 ## Deployment
 - Decide if you want/need to deploy your application to the cloud
 - Ask a mentor for assistance/advice if your team decides to deploy
+
+
+## Presentation
+
+- Jeremy is the customer
+- 
+
+5 talking points
+
+- 
+- Jer starts with 
+- Jer starts as customer - describing home, then menu, then adding and placing order
+- comment on user experience about order placement
+
+- Sara shows SMS
+
+
