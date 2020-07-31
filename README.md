@@ -44,3 +44,35 @@ CAPTAIN CLUCKS WEB APP
 - Node 10.x or above
 - NPM 5.x or above
 - PG 6.x
+
+## Screenshots
+
+### Homepage
+!["Homepage"](https://raw.githubusercontent.com/SaraIrving/Midterm/orders/public/photos/screenshots/home-page.jpg)
+
+### Menu
+!["Menu"](https://raw.githubusercontent.com/SaraIrving/Midterm/orders/public/photos/screenshots/menu.png)
+
+### Menu items
+!["Menu items"](https://raw.githubusercontent.com/SaraIrving/Midterm/orders/public/photos/screenshots/menu2.png)
+
+### Confirmation
+!["Confirmation page after an order has been confirmed by the restaurant"](https://raw.githubusercontent.com/SaraIrving/Midterm/orders/public/photos/screenshots/confirmation.png)
+
+### Admins can login
+!["Login"](https://raw.githubusercontent.com/SaraIrving/Midterm/orders/public/photos/screenshots/login.png)
+
+### Admin dashboard
+!["Dashboard page with a pending order"](https://raw.githubusercontent.com/SaraIrving/Midterm/orders/public/photos/screenshots/dashboard.png)
+
+### Admins can view different orders by status
+!["Dashboard with orders of various status states"](https://raw.githubusercontent.com/SaraIrving/Midterm/orders/public/photos/screenshots/dashboard2.png)
+
+### Edit Menu for Admins
+!["Admins can edit the menu"](https://raw.githubusercontent.com/SaraIrving/Midterm/orders/public/photos/screenshots/login.png)
+
+### Admins can add new items to the menu
+!["Admins can add new items to the menu"](https://raw.githubusercontent.com/SaraIrving/Midterm/orders/public/photos/screenshots/edit-menu2.png)
+
+
+
