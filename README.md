@@ -72,7 +72,7 @@ CAPTAIN CLUCKS WEB APP
 !["Admins can edit the menu"](https://github.com/SaraIrving/Midterm/blob/orders/public/photos/screenshots/edit-menu.png?raw=true)
 
 ### Admins can add new items to the menu
-!["Admins can add new items to the menu"](https://github.com/SaraIrving/Midterm/blob/orders/public/photos/screenshots/edit-menu2.png?raw=true)
+!["Admins can add new items to the menu"](https://github.com/SaraIrving/Midterm/blob/orders/public/photos/screenshots/eidt-menu2.png?raw=true)
 
 
 
